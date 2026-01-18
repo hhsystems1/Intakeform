@@ -108,17 +108,26 @@ const IntakeForm = () => {
         image_count: uploadedImages.length,
       }
 
-      // Uncomment and configure when you have EmailJS credentials:
-      /*
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        templateParams,
-        'YOUR_PUBLIC_KEY'
-      )
-      */
+      // Get credentials from environment variables (defined in .env file)
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-      // For now, just log the data
+      // Validate credentials are configured
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        throw new Error('EmailJS credentials not configured. Please check your .env file.')
+      }
+
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        {
+          publicKey: PUBLIC_KEY,
+        }
+      )
+
+      // Also log the data for debugging
       console.log('Form submission data:', {
         ...templateParams,
         images: uploadedImages.map(img => img.name)
@@ -126,7 +135,7 @@ const IntakeForm = () => {
 
       setSubmitStatus({
         type: 'success',
-        message: 'Form submitted successfully! (Note: Configure EmailJS to actually send emails)'
+        message: 'Form submitted successfully! Check your email.'
       })
 
       // Reset form
