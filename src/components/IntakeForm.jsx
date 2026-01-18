@@ -111,14 +111,16 @@ const IntakeForm = () => {
       // Uncomment and configure when you have EmailJS credentials:
       
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        SERVICE_ID,
+        TEMPLATE_ID,
         templateParams,
-        'YOUR_PUBLIC_KEY'
+        {
+          publicKey: PUBLIC_KEY,
+        }
       )
       
 
-      // For now, just log the data
+      // Also log the data for debugging
       console.log('Form submission data:', {
         ...templateParams,
         images: uploadedImages.map(img => img.name)
@@ -126,7 +128,7 @@ const IntakeForm = () => {
 
       setSubmitStatus({
         type: 'success',
-        message: 'Form submitted successfully! (Note: Configure EmailJS to actually send emails)'
+        message: 'Form submitted successfully! Check your email.'
       })
 
       // Reset form
