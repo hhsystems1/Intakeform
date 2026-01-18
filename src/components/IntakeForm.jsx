@@ -26,8 +26,8 @@ const IntakeForm = () => {
     additionalInfo: '',
   })
 
-  const [primaryColor, setPrimaryColor] = useState('#667eea')
-  const [secondaryColor, setSecondaryColor] = useState('#764ba2')
+  const [primaryColor, setPrimaryColor] = useState('#38B5FF')
+  const [secondaryColor, setSecondaryColor] = useState('#2A8FCC')
   const [showPrimaryPicker, setShowPrimaryPicker] = useState(false)
   const [showSecondaryPicker, setShowSecondaryPicker] = useState(false)
 
@@ -165,8 +165,8 @@ const IntakeForm = () => {
         competitors: '',
         additionalInfo: '',
       })
-      setPrimaryColor('#667eea')
-      setSecondaryColor('#764ba2')
+      setPrimaryColor('#38B5FF')
+      setSecondaryColor('#2A8FCC')
       setUploadedImages([])
 
     } catch (error) {
@@ -186,7 +186,7 @@ const IntakeForm = () => {
 
         {/* Company Information Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Company Information
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -200,7 +200,7 @@ const IntakeForm = () => {
                 value={formData.companyName}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="Your Company Name"
               />
             </div>
@@ -214,7 +214,7 @@ const IntakeForm = () => {
                 value={formData.contactName}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="Your Name"
               />
             </div>
@@ -228,7 +228,7 @@ const IntakeForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="email@example.com"
               />
             </div>
@@ -241,7 +241,7 @@ const IntakeForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="(123) 456-7890"
               />
             </div>
@@ -250,7 +250,7 @@ const IntakeForm = () => {
 
         {/* Project Details Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Project Details
           </h2>
           <div className="space-y-6">
@@ -264,7 +264,7 @@ const IntakeForm = () => {
                 onChange={handleInputChange}
                 required
                 rows="3"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="e.g., Sell products online, showcase portfolio, generate leads, provide information..."
               />
             </div>
@@ -277,7 +277,7 @@ const IntakeForm = () => {
                 value={formData.targetAudience}
                 onChange={handleInputChange}
                 rows="3"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="Describe your ideal customers or users..."
               />
             </div>
@@ -290,7 +290,7 @@ const IntakeForm = () => {
                 name="existingWebsite"
                 value={formData.existingWebsite}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="https://yourwebsite.com"
               />
             </div>
@@ -303,7 +303,7 @@ const IntakeForm = () => {
                 value={formData.competitors}
                 onChange={handleInputChange}
                 rows="2"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
                 placeholder="List any competitor websites you like or want to reference..."
               />
             </div>
@@ -312,20 +312,20 @@ const IntakeForm = () => {
 
         {/* Features Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Desired Features
           </h2>
           <div className="grid md:grid-cols-3 gap-3">
             {featureOptions.map(feature => (
               <label
                 key={feature}
-                className="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-purple-50 transition"
+                className="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-hhs-blue/10 transition"
               >
                 <input
                   type="checkbox"
                   checked={formData.features.includes(feature)}
                   onChange={() => handleFeatureToggle(feature)}
-                  className="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
+                  className="w-5 h-5 text-hhs-blue rounded focus:ring-hhs-blue"
                 />
                 <span className="text-sm text-gray-700">{feature}</span>
               </label>
@@ -335,7 +335,7 @@ const IntakeForm = () => {
 
         {/* Color Scheme Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Brand Colors
           </h2>
           <p className="text-sm text-gray-600 mb-4">
@@ -351,7 +351,7 @@ const IntakeForm = () => {
                 <button
                   type="button"
                   onClick={() => setShowPrimaryPicker(!showPrimaryPicker)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg flex items-center space-x-3 hover:border-purple-500 transition"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg flex items-center space-x-3 hover:border-hhs-blue transition"
                 >
                   <div
                     className="w-8 h-8 rounded border-2 border-gray-300"
@@ -383,7 +383,7 @@ const IntakeForm = () => {
                 <button
                   type="button"
                   onClick={() => setShowSecondaryPicker(!showSecondaryPicker)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg flex items-center space-x-3 hover:border-purple-500 transition"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg flex items-center space-x-3 hover:border-hhs-blue transition"
                 >
                   <div
                     className="w-8 h-8 rounded border-2 border-gray-300"
@@ -410,7 +410,7 @@ const IntakeForm = () => {
 
         {/* Image Upload Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Reference Images
           </h2>
           <p className="text-sm text-gray-600 mb-4">
@@ -418,7 +418,7 @@ const IntakeForm = () => {
           </p>
           <div className="space-y-4">
             <label className="block">
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-purple-500 transition cursor-pointer">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-hhs-blue transition cursor-pointer">
                 <svg
                   className="mx-auto h-12 w-12 text-gray-400"
                   stroke="currentColor"
@@ -474,7 +474,7 @@ const IntakeForm = () => {
 
         {/* Timeline and Budget Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Timeline & Budget
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -486,7 +486,7 @@ const IntakeForm = () => {
                 name="timeline"
                 value={formData.timeline}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
               >
                 <option value="">Select timeline</option>
                 <option value="asap">ASAP</option>
@@ -503,7 +503,7 @@ const IntakeForm = () => {
                 name="budget"
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
               >
                 <option value="">Select budget</option>
                 <option value="500">$500</option>
@@ -518,7 +518,7 @@ const IntakeForm = () => {
 
         {/* Additional Information Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-hhs-blue pb-2">
             Additional Information
           </h2>
           <textarea
@@ -526,7 +526,7 @@ const IntakeForm = () => {
             value={formData.additionalInfo}
             onChange={handleInputChange}
             rows="4"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hhs-blue focus:border-transparent outline-none transition"
             placeholder="Any other details, requirements, or questions you'd like to share..."
           />
         </section>
@@ -545,7 +545,7 @@ const IntakeForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg"
+            className="w-full bg-gradient-to-r from-hhs-blue to-hhs-blue text-white font-bold py-4 px-6 rounded-lg hover:from-hhs-blue-dark hover:to-hhs-blue-dark transition transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg"
           >
             {isSubmitting ? 'Submitting...' : 'Submit Intake Form'}
           </button>
