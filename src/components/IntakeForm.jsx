@@ -108,16 +108,8 @@ const IntakeForm = () => {
         image_count: uploadedImages.length,
       }
 
-      // Get credentials from environment variables (defined in .env file)
-      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-      const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-
-      // Validate credentials are configured
-      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-        throw new Error('EmailJS credentials not configured. Please check your .env file.')
-      }
-
+      // Uncomment and configure when you have EmailJS credentials:
+      
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -126,6 +118,7 @@ const IntakeForm = () => {
           publicKey: PUBLIC_KEY,
         }
       )
+      
 
       // Also log the data for debugging
       console.log('Form submission data:', {
@@ -494,11 +487,10 @@ const IntakeForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
               >
                 <option value="">Select budget</option>
-                <option value="under-5k">Under $5,000</option>
-                <option value="5k-10k">$5,000 - $10,000</option>
-                <option value="10k-25k">$10,000 - $25,000</option>
-                <option value="25k-50k">$25,000 - $50,000</option>
-                <option value="50k-plus">$50,000+</option>
+                <option value="500">$500</option>
+                <option value="1k-2k">$1,000 - $2,000</option>
+                <option value="25k-45k">$2,500 - $4,500</option>
+                <option value="5k-plus">$5,000+</option>
                 <option value="not-sure">Not sure yet</option>
               </select>
             </div>
