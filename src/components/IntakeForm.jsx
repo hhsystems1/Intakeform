@@ -1,8 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SketchPicker } from 'react-color'
 import emailjs from '@emailjs/browser'
 
 const IntakeForm = () => {
+  // Initialize EmailJS with public key on component mount
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
+      console.log('EmailJS initialized with public key')
+    }
+  }, [])
   const [formData, setFormData] = useState({
     companyName: '',
     contactName: '',
@@ -108,15 +116,26 @@ const IntakeForm = () => {
         image_count: uploadedImages.length,
       }
 
-      // Uncomment and configure when you have EmailJS credentials:
-      
+      // Get credentials from environment variables (defined in .env file)
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+
+      // Debug: Log what we're sending
+      console.log('EmailJS Config:', {
+        SERVICE_ID: SERVICE_ID || 'NOT SET',
+        TEMPLATE_ID: TEMPLATE_ID || 'NOT SET',
+      })
+
+      // Validate credentials are configured
+      if (!SERVICE_ID || !TEMPLATE_ID) {
+        throw new Error('EmailJS credentials not configured. Please check your .env file and restart the dev server.')
+      }
+
+      // Send email (public key already initialized in useEffect)
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
-        templateParams,
-        {
-          publicKey: PUBLIC_KEY,
-        }
+        templateParams
       )
       
 
