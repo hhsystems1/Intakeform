@@ -1,0 +1,16 @@
+LOGO PLACEMENT INSTRUCTIONS
+============================
+
+Place your Helping Hand Systems logo in this directory as:
+
+  hhs-logo.png
+
+The logo should be:
+- PNG format (with transparent background preferred)
+- High resolution (at least 400x400px recommended)
+- Will display at approximately 128px height on the form
+
+Current expected path: /public/assets/hhs-logo.png
+
+If you rename the logo file, update the path in:
+  src/App.jsx (line 11)
