@@ -108,8 +108,22 @@ const IntakeForm = () => {
         image_count: uploadedImages.length,
       }
 
-      // Uncomment and configure when you have EmailJS credentials:
-      
+      // Get credentials from environment variables (defined in .env file)
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      // Debug: Log what we're getting from env (remove in production)
+      console.log('EmailJS Config:', {
+        SERVICE_ID: SERVICE_ID || 'NOT SET',
+        TEMPLATE_ID: TEMPLATE_ID || 'NOT SET',
+        PUBLIC_KEY: PUBLIC_KEY ? `${PUBLIC_KEY.substring(0, 4)}...` : 'NOT SET',
+      })
+
+      // Validate credentials are configured
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        throw new Error('EmailJS credentials not configured. Please check your .env file and restart the dev server.')
+      }
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
